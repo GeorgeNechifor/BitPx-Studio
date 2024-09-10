@@ -130,7 +130,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BitPxSudio.cpp" />
+    <ClCompile Include="src\BitPxSudio.cpp" />
+    <ClCompile Include="src\Button.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Button.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

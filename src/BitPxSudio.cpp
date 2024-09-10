@@ -2,10 +2,13 @@
 
 #include <iostream>
 #include<SFML/Graphics.hpp>
+#include "../Button.h"
 
 
 int main()
 {
+
+    Button button;
 
     sf::RenderWindow window(sf::VideoMode(600, 600), "sdc", sf::Style::Titlebar | sf::Style::Close);
     while (window.isOpen()) {
@@ -16,6 +19,7 @@ int main()
             }
         }
         window.clear(sf::Color::White);
+        window.draw(button);
         window.display();
     }
 
