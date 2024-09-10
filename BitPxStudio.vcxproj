@@ -132,9 +132,11 @@
   <ItemGroup>
     <ClCompile Include="src\BitPxSudio.cpp" />
     <ClCompile Include="src\Button.cpp" />
+    <ClCompile Include="src\CustomText.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Button.h" />
+    <ClInclude Include="include\CustomText.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
