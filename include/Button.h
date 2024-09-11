@@ -1,12 +1,14 @@
 #pragma once
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
+#include "../CustomText.h"
 
-class Button : public sf::Drawable
+class Button : public CustomText
 {
 public:
 	Button() {
 		setDefaultButton();
-	}
+	};
+
 	void setButtonColor(sf::Color color);
 	void setButtonPosition(sf::Vector2f position);
 	void setButtonBorderColor(sf::Color color);
@@ -18,5 +20,6 @@ private:
 	sf::Text text;
 	void setDefaultButton();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
 };
 
