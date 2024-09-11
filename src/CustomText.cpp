@@ -1,7 +1,7 @@
 #include "../CustomText.h"
-#define DEFAULT_POSITION sf::Vector2f(1.f, 1.f)
+#define DEFAULT_POSITION sf::Vector2f(10.f, 1.f)
 constexpr auto DEFAULT_SIZE = 20;
-constexpr auto DEFAULT_STRING = "CustomText";
+constexpr auto DEFAULT_STRING = "Clickaaa";
 
 
 void CustomText::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -21,7 +21,6 @@ void CustomText::setDefaultTextStyle() {
 	this->text.setFillColor(sf::Color::Black);
 	this->text.setCharacterSize(DEFAULT_SIZE);
 	this->text.setFont(this->font);
-	this->text.setPosition(DEFAULT_POSITION);
 	this->text.setString(DEFAULT_STRING);
 
 }

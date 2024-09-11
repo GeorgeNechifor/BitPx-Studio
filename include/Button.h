@@ -2,11 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include "../CustomText.h"
 
-class Button : public CustomText
+class Button : public sf::Drawable
 {
 public:
 	Button() {
 		setDefaultButton();
+		centerText();
 	};
 
 	void setButtonColor(sf::Color color);
@@ -17,9 +18,10 @@ public:
 	bool buttonLeftClickEvent(sf::Event& event);
 private:
 	sf::RectangleShape button;
-	sf::Text text;
+	sf::Text buttonText;
+	sf::Font font;
 	void setDefaultButton();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-
+	void centerText();
 };
 

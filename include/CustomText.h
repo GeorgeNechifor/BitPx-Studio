@@ -18,8 +18,10 @@ public:
 	void setTextPosition(sf::Vector2f position);
 	void setTextSize(float size);
 	void setTextColor(sf::Color color);
-private:
+protected:
 	sf::Text text;
+
+private:
 	sf::Font font;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 	void setTextStyle(sf::Color, float characterSize, sf::Vector2f position, std::string text);
