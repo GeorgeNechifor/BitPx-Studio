@@ -131,12 +131,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\BitPxSudio.cpp" />
+    <ClCompile Include="src\Board.cpp" />
     <ClCompile Include="src\Button.cpp" />
+    <ClCompile Include="src\Container.cpp" />
     <ClCompile Include="src\CustomText.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Board.h" />
     <ClInclude Include="include\Button.h" />
+    <ClInclude Include="include\Container.h" />
     <ClInclude Include="include\CustomText.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>

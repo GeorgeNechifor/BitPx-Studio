@@ -1,10 +1,13 @@
 #include "../Window.h"
 #include "../Button.h"
-
+#include "../Container.h"
+#include "../Board.h"
 
 void Window::setWindow() {
 	Button button;
-	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), TITLE, sf::Style::Titlebar | sf::Style::Close);
+	sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
+	Board board;
+	sf::RenderWindow window(sf::VideoMode(desktop.width, desktop.height), TITLE, sf::Style::Titlebar | sf::Style::Close);
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -14,7 +17,7 @@ void Window::setWindow() {
 		}
 		window.clear(sf::Color::White);
 		window.draw(button);
+		window.draw(board);
 		window.display();
 	}
-
 }
