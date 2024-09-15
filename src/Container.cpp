@@ -16,3 +16,11 @@ void Container::setContainer(sf::Color color, sf::Color borderColor, sf::Vector2
 void Container::setBackgroundColor(sf::Color color) {
 	this->container.setFillColor(color);
 }
+
+void Container::setContainerPosition(sf::Vector2f position) {
+	this->container.setPosition(position);
+}
+
+sf::Color Container::getBackgroundColor() {
+	return this->container.getFillColor();
+}

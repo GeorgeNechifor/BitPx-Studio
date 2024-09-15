@@ -13,6 +13,7 @@ public:
 	CustomText() { 
 		getFont();
 		setDefaultTextStyle();
+		
 	};
 	void setTextString(std::string text);
 	void setTextPosition(sf::Vector2f position);
