@@ -26,7 +26,7 @@ void CustomText::setDefaultTextStyle() {
 }
 
 void CustomText::getFont() {
-	if (!this->font.loadFromFile("C:/BitPx Studio/BitPxStudio/BitPxStudio/assets/RedditSansCondensed-Medium.ttf")) {
+	if (!this->font.loadFromFile("C:/BitPx Studio/BitPxStudio/BitPxStudio/assets/Font/RedditSansCondensed-Medium.ttf")) {
 		perror("Font not found");
 	}
 }

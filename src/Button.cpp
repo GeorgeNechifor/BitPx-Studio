@@ -33,7 +33,7 @@ void Button::setDefaultButton() {
 	this->buttonText.setFillColor(sf::Color::Black);
 	this->buttonText.setCharacterSize(18);
 	this->buttonText.setString("Clickable");
-	if (!this->font.loadFromFile("C:/BitPx Studio/BitPxStudio/BitPxStudio/assets/RedditSansCondensed-Medium.ttf")) {
+	if (!this->font.loadFromFile("C:/BitPx Studio/BitPxStudio/BitPxStudio/assets/Font/RedditSansCondensed-Medium.ttf")) {
 		perror("Font not found");
 	}
 	this->buttonText.setFont(font);

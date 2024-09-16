@@ -7,18 +7,25 @@ void Zoom::zoomEvent(sf::Event& event, sf::RenderWindow& window) {
 		if (event.type == sf::Event::MouseWheelScrolled) {
 			if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
 				int delta = event.mouseWheelScroll.delta;
-				sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-				if (delta > 0) {
-					this->view.zoom(0.9f);
+				sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+				sf::Vector2f worldPosition = window.mapPixelToCoords(mousePosition);
+				if (delta >= 0) {
+					if (zoomLevel / zoomFactor >= maxZoomLevel) {
+						zoomLevel *= zoomFactor;
+					}
 				}
-				else {
-					this->view.zoom(1.1f);
+				else if (delta <= 0) {
+					if (zoomLevel * zoomFactor <= minZoomLevel) {
+						zoomLevel /= zoomFactor;
+					}
 				}
+				this->view.setSize(sf::Vector2f(1010.f, 1010.f) * zoomLevel);
 			}
 		}
-	}
-	else {
-		this->view.zoom(1.f);
+
+		else {
+			this->view.zoom(1.f);
+		}
 	}
 }
 

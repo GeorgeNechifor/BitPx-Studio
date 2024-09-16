@@ -15,12 +15,10 @@ public:
 	void hoverEvent(sf::Event& event);
 	void drawEvent(sf::RenderWindow& window);
 	void eraseEvent();
-
-
 protected:
 	void setBoard(sf::RenderTarget& target , sf::RenderStates states) const;
 	sf::Color currentColor = sf::Color::Black;
-	unsigned short pixelSize = 3;
+	unsigned short pixelSize = 1;
 private:
 	sf::Color board[100][100];
 	bool isHolding = false;
