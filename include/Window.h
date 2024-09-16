@@ -7,8 +7,8 @@ class Window
 {
 public:
 	void setWindow();
-	
 private:
+	void setViews(sf::RenderWindow& window , sf::View boardView , bool& zooming);
 	
 };
 

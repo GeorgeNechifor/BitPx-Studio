@@ -12,7 +12,6 @@ void Window::setWindow() {
 	Board board;
 	sf::RenderWindow window(sf::VideoMode(desktop.width, desktop.height), TITLE, sf::Style::Titlebar | sf::Style::Close);
 	Zoom zoom;
-	zoom.view = window.getDefaultView();
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -21,11 +20,26 @@ void Window::setWindow() {
 			}
 			zoom.zoomEvent(event, window);
 		}
-		window.setView(zoom.view);
 		window.clear(WINDOW_COLOR);
+		setViews(window, zoom.view , zoom.zooming);
 		window.draw(board);
 		board.drawEvent(window);
 		window.draw(button);
+
 		window.display();
+	}
+}
+
+void Window::setViews(sf::RenderWindow& window , sf::View boardView , bool& zooming) {
+	sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+	if (mousePosition.x >= 450 && mousePosition.x <= 1450) {
+		if (mousePosition.y >= 20 && mousePosition.y <= 1030) {
+			window.setView(boardView);
+			zooming = true;
+		}
+	}
+	else {
+		window.setView(window.getDefaultView());
+		zooming = false;
 	}
 }

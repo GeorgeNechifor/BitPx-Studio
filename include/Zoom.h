@@ -4,9 +4,13 @@
 class Zoom
 {
 public:
+	Zoom() {
+		setView();
+	};
 	void zoomEvent(sf::Event& event, sf::RenderWindow& window);
 	sf::View view;
+	bool zooming = false;
 private:
-	float zoomFactor = 1;
+	void setView();
 };
 

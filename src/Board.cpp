@@ -98,5 +98,5 @@ void Board::usePixelSize(short i, short j) {
 
 
 void Board::eraseEvent() {
-
+	
 }

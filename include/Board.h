@@ -20,7 +20,7 @@ public:
 protected:
 	void setBoard(sf::RenderTarget& target , sf::RenderStates states) const;
 	sf::Color currentColor = sf::Color::Black;
-	unsigned short pixelSize = 10;
+	unsigned short pixelSize = 3;
 private:
 	sf::Color board[100][100];
 	bool isHolding = false;
