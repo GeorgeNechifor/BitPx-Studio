@@ -45,7 +45,7 @@ void Board::fillBoardConditions(short i, short j) {
 	}
 }
 
-void Board::drawEvent(sf::RenderWindow& window) {
+void Board::drawEvent(sf::RenderWindow& window , float zoomLevel) {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		if (!isHolding) {
 			isHolding = true;

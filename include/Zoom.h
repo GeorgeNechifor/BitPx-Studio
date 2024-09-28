@@ -8,14 +8,16 @@ public:
 		setView();
 	};
 	void zoomEvent(sf::Event& event, sf::RenderWindow& window);
+	void viewMoveEvent();
 	sf::View view;
 	bool zooming = false;
+	float zoomLevel = 1.0f;
+
 private:
 	void setView();
-	float zoomLevel = 1.0f;
 	const float minZoomLevel = 0.85f;
 	const float maxZoomLevel = 0.3f;
-	float zoomFactor = 0.9f;
-	
+	float zoomFactor = 0.9f;	
+	bool zoomed = false;
 };
 

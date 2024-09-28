@@ -23,9 +23,9 @@ void Window::setWindow() {
 		window.clear(WINDOW_COLOR);
 		setViews(window, zoom.view , zoom.zooming);
 		window.draw(board);
-		board.drawEvent(window);
+		board.drawEvent(window , zoom.zoomLevel);
 		window.draw(button);
-
+		zoom.viewMoveEvent();
 		window.display();
 	}
 }

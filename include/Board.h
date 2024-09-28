@@ -13,7 +13,7 @@ public:
 		fillBoard();
 	};
 	void hoverEvent(sf::Event& event);
-	void drawEvent(sf::RenderWindow& window);
+	void drawEvent(sf::RenderWindow& window , float zoomLevel);
 	void eraseEvent();
 protected:
 	void setBoard(sf::RenderTarget& target , sf::RenderStates states) const;
