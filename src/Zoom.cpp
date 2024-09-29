@@ -30,7 +30,6 @@ void Zoom::zoomEvent(sf::Event& event, sf::RenderWindow& window) {
 				sf::Vector2f boardPosition(450.f, 20.f);
 				this->view.setSize(sf::Vector2f(1010.f, 1010.f) * zoomLevel);
 				this->view.setCenter(boardPosition + boardSize / 2.f);
-				std::cout << zoomLevel * 100 << std::endl;
 			}
 		}
 		else {

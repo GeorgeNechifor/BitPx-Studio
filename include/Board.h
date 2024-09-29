@@ -12,8 +12,8 @@ public:
 	Board() {
 		fillBoard();
 	};
-	void hoverEvent(sf::Event& event);
-	void drawEvent(sf::RenderWindow& window , float zoomLevel);
+	void hoverEvent(sf::RenderWindow& window , sf::View view);
+	void drawEvent(sf::RenderWindow& window , sf::View view);
 	void eraseEvent();
 protected:
 	void setBoard(sf::RenderTarget& target , sf::RenderStates states) const;

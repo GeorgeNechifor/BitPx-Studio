@@ -25,8 +25,8 @@ void Board::fillBoard() {
 	}
 }
 
-void Board::hoverEvent(sf::Event& event) {
-	float mouseX = event.mouseButton.x;
+void Board::hoverEvent(sf::RenderWindow& window , sf::View view) {
+	
 
 }
 
@@ -45,18 +45,19 @@ void Board::fillBoardConditions(short i, short j) {
 	}
 }
 
-void Board::drawEvent(sf::RenderWindow& window , float zoomLevel) {
+void Board::drawEvent(sf::RenderWindow& window , sf::View view) {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		if (!isHolding) {
 			isHolding = true;
 		}
 		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+		sf::Vector2f viewPos = window.mapPixelToCoords(mousePosition, view);
 		for (short i = 0; i < 100; ++i) {
 			for (short j = 0; j < 100; ++j) {
 				float containerX = (j * 10) + 450;
 				float containerY = (i * 10) + 20;
-				if (mousePosition.x >= containerX && mousePosition.x <= containerX + 10.f) {
-					if (mousePosition.y >= containerY && mousePosition.y <= containerY + 10.f) {
+				if (viewPos.x >= containerX && viewPos.x <= containerX + 10.f) {
+					if (viewPos.y >= containerY && viewPos.y <= containerY + 10.f) {
 						usePixelSize(i, j);
 					}
 				}

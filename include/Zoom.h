@@ -20,4 +20,3 @@ private:
 	float zoomFactor = 0.9f;	
 	bool zoomed = false;
 };
-
