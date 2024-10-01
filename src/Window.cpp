@@ -29,6 +29,7 @@ void Window::setWindow() {
 		board.drawEvent(window , zoom.view);
 		window.draw(button);
 		zoom.viewMoveEvent();
+		color.colorEvent(window, board.currentColor);
 		window.display();
 	}
 }

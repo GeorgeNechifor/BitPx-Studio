@@ -24,3 +24,9 @@ void Container::setContainerPosition(sf::Vector2f position) {
 sf::Color Container::getBackgroundColor() {
 	return this->container.getFillColor();
 }
+
+
+void Container::setContainerBorder(sf::Color color , float border) {
+	this->container.setOutlineColor(color);
+	this->container.setOutlineThickness(border);
+}

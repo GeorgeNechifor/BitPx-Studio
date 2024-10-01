@@ -9,6 +9,7 @@ public:
 	Container() {};
 	void setBackgroundColor(sf::Color color);
 	void setContainerPosition(sf::Vector2f position);
+	void setContainerBorder(sf::Color color , float border);
 	sf::Color getBackgroundColor();
 private:
 	void setContainer(sf::Color color, sf::Color borderColor, sf::Vector2f size, sf::Vector2f position , float border);

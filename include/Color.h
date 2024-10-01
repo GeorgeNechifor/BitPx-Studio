@@ -7,12 +7,12 @@ class Color : public sf::Drawable
 {
 public:
 	Color() { fillColors(); };
-	void colorEvent();
+	void colorEvent(sf::RenderWindow& window , sf::Color& currentColor);
 private:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 	void setColorContainer(sf::RenderTarget& target, sf::RenderStates states) const;
 	void fillColors();
-	sf::Color colors[3][3];
-	
+	sf::Color colors[4][4];
+	short col = 0, row = 0;
 };
 
