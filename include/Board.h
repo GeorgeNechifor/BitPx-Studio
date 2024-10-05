@@ -15,17 +15,18 @@ public:
 	void hoverEvent(sf::RenderWindow& window , sf::View view);
 	void drawEvent(sf::RenderWindow& window , sf::View view);
 	void eraseEvent();
+public:
+	unsigned short pixelSize = 3;
 	sf::Color currentColor = sf::Color::Black;
 protected:
 	void setBoard(sf::RenderTarget& target , sf::RenderStates states) const;
-	unsigned short pixelSize = 3;
 private:
 	sf::Color board[100][100];
 	bool isHolding = false;
+private:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 	void fillBoard();
 	void fillBoardConditions(short i , short j);
 	void usePixelSize(short i , short j);
-
 };
 

@@ -21,6 +21,8 @@ void Window::setWindow() {
 				window.close();
 			}
 			zoom.zoomEvent(event, window);
+			color.RGBEvent(window , event);
+
 		}
 		window.clear(WINDOW_COLOR);
 		setViews(window, zoom.view , zoom.zooming);

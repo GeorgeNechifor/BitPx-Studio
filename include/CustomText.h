@@ -24,6 +24,7 @@ protected:
 
 private:
 	sf::Font font;
+private:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 	void setTextStyle(sf::Color, float characterSize, sf::Vector2f position, std::string text);
 	void setDefaultTextStyle();
