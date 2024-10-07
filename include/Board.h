@@ -2,6 +2,7 @@
 #include<SFML/Graphics.hpp>
 #include<iostream>
 #include "../Container.h"
+#include"../ClickEvent.h"
 #define LIGHT_GRAY sf::Color(210, 210, 210)
 #define DARK_GRAY sf::Color(160, 160, 160)
 #define HOVER_COLOR sf::Color::Black;

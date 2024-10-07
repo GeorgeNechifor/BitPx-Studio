@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "../CustomText.h"
+#include"../ClickEvent.h"
 
 class Button : public sf::Drawable
 {
