@@ -10,6 +10,7 @@ public:
 	void setBackgroundColor(sf::Color color);
 	void setContainerPosition(sf::Vector2f position);
 	void setContainerBorder(sf::Color color , float border);
+	sf::FloatRect getBounds();
 public:
 	sf::Color getBackgroundColor();
 private:

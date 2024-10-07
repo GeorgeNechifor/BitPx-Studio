@@ -16,6 +16,7 @@ private:
 	void setColorContainer(sf::RenderTarget& target, sf::RenderStates states) const;
 	void fillColors();
 	void setCustomColor(sf::RenderTarget& target, sf::RenderStates states) const;
+	void centerText(CustomText& text , Container& container);
 private:
 	sf::Color colors[4][4];
 	short col = 0, row = 0;

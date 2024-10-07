@@ -30,3 +30,7 @@ void Container::setContainerBorder(sf::Color color , float border) {
 	this->container.setOutlineColor(color);
 	this->container.setOutlineThickness(border);
 }
+
+sf::FloatRect Container::getBounds() {
+	return this->container.getLocalBounds();
+}

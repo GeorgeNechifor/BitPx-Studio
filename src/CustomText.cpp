@@ -46,3 +46,7 @@ void CustomText::setTextSize(float size) {
 void CustomText::setTextString(std::string text) {
 	this->text.setString(text);
 }
+
+sf::FloatRect CustomText::getBounds() {
+	return this->text.getLocalBounds();
+}

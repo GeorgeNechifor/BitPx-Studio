@@ -3,6 +3,7 @@
 #include "../Container.h"
 #include "../Zoom.h"
 #include "../Color.h"
+#include"../Tools.h"
 
 #define WINDOW_COLOR sf::Color(240, 237, 237)
 
@@ -14,6 +15,7 @@ void Window::setWindow() {
 	sf::RenderWindow window(sf::VideoMode(desktop.width, desktop.height), TITLE, sf::Style::Titlebar | sf::Style::Close);
 	Zoom zoom;
 	Color color;
+	Tools tools;
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -31,6 +33,7 @@ void Window::setWindow() {
 		window.draw(button);
 		zoom.viewMoveEvent();
 		color.colorEvent(window, board.currentColor);
+		window.draw(tools);
 		window.display();
 	}
 }

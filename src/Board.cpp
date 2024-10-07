@@ -55,8 +55,10 @@ void Board::drawEvent(sf::RenderWindow& window , sf::View view) {
 			for (short j = 0; j < 100; ++j) {
 				float containerX = (j * 10) + 450;
 				float containerY = (i * 10) + 20;
-				if (ClickEvent::isMouseClicked(containerX, containerX + 10.f, containerY, containerY + 10.f, window)) {
-					usePixelSize(i, j);
+				if (viewPos.x >= containerX && viewPos.x <= containerX + 10.f) {
+					if (viewPos.y >= containerY && viewPos.y <= containerY + 10.f) {
+						usePixelSize(i, j);
+					}
 				}
 			}
 		}	

@@ -71,7 +71,6 @@ void Color::setCustomColor(sf::RenderTarget& target, sf::RenderStates states) co
 			target.draw(valueContainer, states);
 		}
 		else {
-			rgbText.setTextPosition(sf::Vector2f(1505.f + (i * 90), 700.f));
 			rgbText.setTextString(std::to_string(RGB[i]));
 			valueContainer.setContainerPosition(sf::Vector2f(1505.f + (i * 71.6), 690.f));
 			target.draw(valueContainer, states);
@@ -82,6 +81,12 @@ void Color::setCustomColor(sf::RenderTarget& target, sf::RenderStates states) co
 	target.draw(container, states);
 	float containerX = 1505.f;
 	float containerY = 690.f;
-	
-	
+}
+
+void Color::centerText(CustomText& text, Container& container) {
+	sf::FloatRect textBounds = text.getBounds();
+	sf::FloatRect buttonBounds = container.getBounds();
+	float textX = (buttonBounds.width / 2.f) - (textBounds.width / 2.f) - 0.5;
+	float textY = (buttonBounds.height / 2.f) - (textBounds.height / 2.f) - 0.5;
+	text.setTextPosition(sf::Vector2f(textX, textY));
 }

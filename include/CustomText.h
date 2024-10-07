@@ -19,6 +19,7 @@ public:
 	void setTextPosition(sf::Vector2f position);
 	void setTextSize(float size);
 	void setTextColor(sf::Color color);
+	sf::FloatRect getBounds();
 protected:
 	sf::Text text;
 
