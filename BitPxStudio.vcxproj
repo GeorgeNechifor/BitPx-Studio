@@ -137,6 +137,7 @@
     <ClCompile Include="src\Color.cpp" />
     <ClCompile Include="src\Container.cpp" />
     <ClCompile Include="src\CustomText.cpp" />
+    <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\Tools.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\Zoom.cpp" />
@@ -148,6 +149,7 @@
     <ClInclude Include="include\Color.h" />
     <ClInclude Include="include\Container.h" />
     <ClInclude Include="include\CustomText.h" />
+    <ClInclude Include="include\Image.h" />
     <ClInclude Include="include\Tools.h" />
     <ClInclude Include="include\Window.h" />
     <ClInclude Include="include\Zoom.h" />
