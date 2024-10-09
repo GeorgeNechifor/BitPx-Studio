@@ -72,7 +72,9 @@ void Color::setCustomColor(sf::RenderTarget& target, sf::RenderStates states) co
 		}
 		else {
 			rgbText.setTextString(std::to_string(RGB[i]));
+			rgbText.setTextPosition(sf::Vector2f(1505.f + (i * 80), 700.f));
 			valueContainer.setContainerPosition(sf::Vector2f(1505.f + (i * 71.6), 690.f));
+			this->customColorEvent(valueContainer, 1505.f + (i * 71.6), 690.f);
 			target.draw(valueContainer, states);
 			target.draw(rgbText, states);
 		}
@@ -89,4 +91,42 @@ void Color::centerText(CustomText& text, Container& container) {
 	float textX = (buttonBounds.width / 2.f) - (textBounds.width / 2.f) - 0.5;
 	float textY = (buttonBounds.height / 2.f) - (textBounds.height / 2.f) - 0.5;
 	text.setTextPosition(sf::Vector2f(textX, textY));
+}
+
+void Color::customColorEvent(Container& container, float containerX, float containerY) const {
+	sf::Vector2i mousePosition = sf::Mouse::getPosition();
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		if (ClickEvent::isMouseClicked(containerX, containerX + 71.6, containerY, containerY + 71.6, mousePosition)) {
+			container.setBackgroundColor(DARK_GRAY);
+			
+		}
+		else {
+			container.setBackgroundColor(LIGHT_GRAY);
+		}
+	}	
+}
+
+void Color::rgbScrollEvent(sf::Event& event, sf::Color& currentColor, sf::RenderWindow& window) {
+	sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+	if (mousePosition.x < 450 || mousePosition.x > 1450) {
+		if (mousePosition.y < 20 || mousePosition.y > 800) {
+			if (event.type == sf::Event::MouseWheelScrolled) {
+				if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
+					int delta = event.mouseWheelScroll.delta;
+					if (delta >= 0) {
+						if (this->input > 0) {
+							this->input--;
+						}
+					}
+					else if (delta <= 0) {
+						if (this->input < 255) {
+							this->input++;
+						}
+					}
+					this->RGB[1] = input;
+					currentColor = sf::Color(this->RGB[1], this->RGB[1], this->RGB[2]);
+				}
+			}
+		}
+	}
 }

@@ -23,6 +23,7 @@ void Window::setWindow() {
 				window.close();
 			}
 			zoom.zoomEvent(event, window);
+			color.rgbScrollEvent(event , board.currentColor , window);
 
 		}
 		window.clear(WINDOW_COLOR);
